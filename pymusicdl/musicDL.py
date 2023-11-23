@@ -49,6 +49,7 @@ def create_dir():
         os.mkdir("musicDL downloads")
         os.chdir("musicDL downloads")
 
+
 path = os.getcwd()+'/'
 def main():
     if sys.platform=='win32' or os.name=='nt':
@@ -60,7 +61,9 @@ def main():
 
         os.chdir(path)
 
-        picker = Picker(["Download a single song","Download a YouTube Playlist","Download from Spotify"],"Select your choice using arrow keys or press q to quit", indicator=" => ")
+        picker = Picker(["Download a single song","Download a YouTube Playlist","Download from Spotify"],
+        "Select your choice using arrow keys or press q to quit", 
+        indicator=" => ")
         picker.register_custom_handler(ord('q'), lambda picker: exit())
         picker.register_custom_handler(ord('Q'), lambda picker: exit())
         _,ch = picker.start()
